@@ -23,6 +23,12 @@ Route::get('/tableaux',function(){
      return View('layout/tableaux');
 });
 
+Route::get('/contact',function(){
+
+
+    return View('layout/contact');
+
+});
 
 
 //route action

@@ -3,22 +3,27 @@
     <!-- END nav -->
     <div class="hero-wrap">
 	    <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
+	      <div class="slider-item" style="background-image:url(images/image_6.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
 		          <div class="col-md-8 ftco-animate">
 		          	<div class="text w-100 text-center">
 		          		<h2>We Business Grow</h2>
-			            <h1 class="mb-4">We Help You Businesses Innovate and Grow</h1>
-			            <p><a href="#" class="btn btn-white">Connect with us</a></p>
+						<h1 class="mb-4">We Help You Businesses Innovate and Grow</h1>
+						
+						<p>
+							<a href="#" class=" col-md- 6 btn btn-white">Connect with us</a>
+						
+						</p>
+						
 		            </div>
 		          </div>
 		        </div>
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
+	      <div class="slider-item" style="background-image:url(images/pictures/features.png);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -33,7 +38,7 @@
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image:url(images/bg_3.jpg);">
+	      <div class="slider-item" style="background-image:url(images/pictures/forextrading.png);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -53,8 +58,8 @@
     <section class="ftco-section ftco-no-pt bg-light">
     	<div class="container">
     		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 d-flex">
-    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
+    			<div class="col-md-6 d-flex" >
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/pictures/mobil.png);background-position:container">
     				</div>
     			</div>
     			<div class="col-md-6 pl-md-5 py-md-5">
@@ -291,9 +296,9 @@
     		<div class="row">
     			<div class="col-lg-6">
     				<div class="img-faqs w-100">
-	    				<div class="img mb-4 mb-sm-0" style="background-image:url(images/about-2.jpg);">
+	    				<div class="img mb-4 mb-sm-0" style="background-image:url(images/pictures/trade.png);">
 	    				</div>
-	    				<div class="img img-2 mb-4 mb-sm-0" style="background-image:url(images/about-1.jpg);">
+	    				<div class="img img-2 mb-4 mb-sm-0" style="background-image:url(images/pictures/indicators.png);">
 	    				</div>
 	    			</div>
     			</div>

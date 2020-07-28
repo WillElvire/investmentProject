@@ -22,6 +22,12 @@
             <h2>Plan d'investissement</h2>
           </div>
         </div>
+
+		    <div class="alert alert-success">
+			 
+			<div id="compte_a_rebours"><noscript>Fin de l'évènement le 1er janvier 2018.</noscript></div>
+
+			</div>
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-7">
@@ -116,5 +122,9 @@
         </div>
       </div>
     </section>
+
+
+	
+   <script src="/js/rebour.js"></script>
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
     @stop

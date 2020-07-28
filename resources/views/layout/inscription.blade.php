@@ -1,76 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inscription</title>
-
-    <!-- Font Icon -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="/form/vendor/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="/form/css/style.css">
+	<title>Formulaire</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/asset/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/asset/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/asset/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/asset/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						Inscription    
+					</span>
 
-    <div class="main">
+					<div class="wrap-input100 validate-input m-b-16" data-validate="this field is required">
+						<input class="input100" type="text" name="nom" placeholder="Entrez votre nom">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="this field is required">
+						<input class="input100" type="text" name="prenom" placeholder="Entrez votre prenom">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="this field is required">
+						<input class="input100" type="email" name="email" placeholder="Entrez votre email">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="this field is required">
+						<input class="input100" type="number" name="number" placeholder="entrez votre numero de telephone">
+						<span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+					</div>
 
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                       <a href="/">Page d'Accueil</a>
-                        <h2 class="form-title">Inscrivez vous</h2>
-                        
-                        <form method="POST" class="register-form" id="register-form">
-                            @csrf()
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="first_name" id="name" placeholder="Votre nom" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom"><i class="zmdi zmdi-email"></i></label>
-                                <input type="text" name="last_name" id="prenom" placeholder="Votre prénom" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Votre email" required/>
-                            </div>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+					</div>
 
-                            <p style="color:red;font-weight:bold;font-size:14px">
+					<!--<div class="text-right p-t-13 p-b-23">
+						<span class="txt1">
+							Forgot
+						</span>
 
+						<a href="#" class="txt2">
+							Username / Password?
+						</a>  
+                    </div>  !-->
                     
-                          NB:votre mobile money est réqui pour votre retour sur investissement
+                    <br>
 
-                            </p>
-                            
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="number" name="mobile" id="re_pass" placeholder="Votre numero de télephone" required/>
-                            </div>
-                            
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="créer mon compte"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="signup-image">
-                        <figure><img src="/form/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="/user/connection" class="signup-image-link">J'ai déja un compte </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        @include('sweet::alert')
-       
-    </div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Sign in
+						</button>
+					</div>
 
-    <!-- JS -->
-    <script src="/form/vendor/jquery/jquery.min.js"></script>
-    <script src="/form/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+					<div class="flex-col-c p-t-170 p-b-40">
+						<span class="txt1 p-b-9">
+							Don’t have an account?
+						</span>
+
+						<a href="#" class="txt3">
+							se connecter au back office
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+<!--===============================================================================================-->
+	<script src="/asset/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/vendor/bootstrap/js/popper.js"></script>
+	<script src="/asset/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/asset/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/asset/js/main.js"></script>
+
+</body>
 </html>

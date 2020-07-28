@@ -1,5 +1,5 @@
 <div class="wrap">
-			<!--<div class="container">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="bg-wrap">
@@ -24,11 +24,11 @@
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div> 
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	    	<a class="navbar-brand" href="index.html">Accounting</a>
+	    	<a class="navbar-brand" href="/">	E-Trading 212</a>
 	    	
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
@@ -41,6 +41,17 @@
 	          <li class="nav-item"><a href="/action/inscription" class="nav-link">Inscription</a></li>
 	          <li class="nav-item"><a href="/action/authentification" class="nav-link">Back office</a></li>
 	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+			   
+			   <div class="nav-item dropdown ">
+						<a class="nav-link  dropdown-toggle" style="color:black"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    French
+						</a>
+						<div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">English</a>
+								<a class="dropdown-item" href="#">French</a>
+						</div>
+				</div>
+			   
 	        </ul>
 	      </div>
 	    </div>
