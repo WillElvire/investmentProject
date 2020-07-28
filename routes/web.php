@@ -126,9 +126,6 @@ Route::group(['prefix'=>'admin'],function(){
   Route::get('/paiement/','adminController@payement');
 
   Route::get('/inscrits/','adminController@inscription');
-
- 
-
   Route::get('/recherche/','adminController@search');
 
 
