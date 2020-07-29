@@ -28,6 +28,36 @@
 			<div id="compte_a_rebours"><noscript>Fin de l'évènement le 1er janvier 2018.</noscript></div>
 
 			</div>
+
+			<div class="container">
+
+						<center>  
+							
+						
+								 <img src="/images/table/e-trading4.jpg" width="1000" height="1000" class="img-fluid">
+
+								 <br>
+								 <br>
+								 
+								 <img src="/images/table/e-trading1.jpg" width="1000" height="1000" class="img-fluid">
+
+								 <br>
+								 <br>
+
+								 <img src="/images/table/e-trading2.jpg" width="1000" height="1000" class="img-fluid">
+
+								 <br>
+								 <br>
+
+								 <img src="/images/table/e-trading3.jpg" width="1000" height="1000" class="img-fluid">
+					
+					
+					   </center>
+
+			</div>
+
+			<br>
+			<br>
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-7">
