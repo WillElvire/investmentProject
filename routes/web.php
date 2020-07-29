@@ -31,7 +31,10 @@ Route::get('/contact',function(){
 
     return View('layout/contact');
 
-});
+})->name('contact.path');
+
+
+
 
 
 //route action
@@ -50,6 +53,15 @@ Route::group(['prefix'=>'action'],function(){
     //      return View('admin/partials/inscrits');
     // });
     Route::get('/inscrits','inscritsController@show');
+
+
+    //Inscritpion d'un inverstisseur
+    Route::post('/signup','SignUpController@store')->name('store.customer.path');
+
+    Route::post('/message','HomeController@storeMessage')->name('store.message');
+    Route::get('/{token}/{authorization}','SignUpController@SignUpAuthorizeMembre')->name('sigup.membre.authorize');
+    Route::post('/newletter','HomeController@newletter')->name('newletter.path');
+
     
 });
 
