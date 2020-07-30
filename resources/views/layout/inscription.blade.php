@@ -73,6 +73,12 @@
 					</div><br>
                     {!! $errors->first('password_confirm','<span class="help-block">:message</span>') !!}
 
+                    <div class="wrap-input100" >
+						<input class="input100" type="text" name="id_parrain" placeholder="Parrain id">
+						<span class="focus-input100"></span>
+					</div><br>
+                    {!! $errors->first('password_confirm','<span class="help-block">:message</span>') !!}
+
                    <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
                    	<label class="text-center" style="font-size: 20px;">Entrer une carte('passport,carte de sejour, carte d'identité...)</label>
 						<input class="input100" type="file" name="identity" placeholder="">

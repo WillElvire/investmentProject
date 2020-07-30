@@ -8,14 +8,14 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+
 use App\Mail\CustomerSignup;
 
 class SignUpController extends Controller
 {
     public function store(Request $request)
     {  
-
-
 
 
         $verify = validator::make($request->all(),
@@ -36,6 +36,32 @@ class SignUpController extends Controller
         }
 
 
+        if ($request->id_parrain != null) {
+                $verify = DB::table('customers')->where('uniq_id',$request->id_parrain)->first();
+                 if ($verify === null) {
+                   return redirect()->back();
+                 }
+
+                 $identity = $request->file('identity')->store('public/CustomerIdentiy/image');
+                 $customer = Customer::create(
+
+              [
+               'name'=>$request->name,
+               'lastname'=>$request->lastname,
+               'email'=>$request->email,
+               'phone'=>$request->phone,
+               'password'=>Hash::make($request->password),
+               'token'=>Customer::getToken(60),
+               'identity'=>$identity,
+               'uniq_id'=>uniqid(),
+               'id_parrain'=>$request->id_parrain,
+               'id_parrain'=>$request->id_parrain
+        ]);
+         Mail::to($request->email)->send(new CustomerSignup($customer));
+         return redirect()->back();
+        }
+
+
     	$identity = $request->file('identity')->store('public/CustomerIdentiy/image');
     	$customer = Customer::create(
 
@@ -47,9 +73,11 @@ class SignUpController extends Controller
                'password'=>Hash::make($request->password),
                'token'=>Customer::getToken(60),
                'identity'=>$identity,
+               'uniq_id'=>uniqid(),
+               'id_parrain'=>$request->id_parrain
     		]);
-         Mail::to($request->email)->send(new CustomerSignup($customer));
 
+         Mail::to($request->email)->send(new CustomerSignup($customer));
 
 
 
