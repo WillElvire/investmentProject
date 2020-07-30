@@ -14,8 +14,9 @@ use \Torann\GeoIP\Facades\GeoIP;
 |
 */
 
-Route::get('/', function () {
-
+Route::get('/{locale}', function ($locale) {
+    App::setlocale($locale);
+    session(['locale'=>$locale]);
     //dd(geoip()->getLocation('154.0.26.70'));
     return view('layout/home');
 }); 
@@ -32,7 +33,6 @@ Route::get('/contact',function(){
     return View('layout/contact');
 
 })->name('contact.path');
-
 
 
 

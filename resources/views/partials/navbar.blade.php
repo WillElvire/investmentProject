@@ -1,3 +1,6 @@
+<?php 
+$locale = session('locale');
+ ?>
 <div class="wrap">
 			<div class="container">
 				<div class="row">
@@ -35,20 +38,20 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item "><a href="/" class="nav-link">Accueil</a></li>
-	        	<li class="nav-item"><a href="/tableaux" class="nav-link">Tableaux</a></li>
+	        	<li class="nav-item "><a href="/{{ $locale }}" class="nav-link">{{ __('navbar.home') }}</a></li>
+	        	<li class="nav-item"><a href="/tableaux" class="nav-link">{{ __('navbar.tables')}}</a></li>
 	        	<li class="nav-item"><a href="/faq" class="nav-link">faq</a></li>
-	          <li class="nav-item"><a href="/action/inscription" class="nav-link">Inscription</a></li>
+	          <li class="nav-item"><a href="/action/inscription" class="nav-link">{{ __('navbar.register')}}</a></li>
 	          <li class="nav-item"><a href="/action/authentification" class="nav-link">Back office</a></li>
 	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
 			   
 			   <div class="nav-item dropdown ">
 						<a class="nav-link  dropdown-toggle" style="color:black"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    French
+						    language
 						</a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#">English</a>
-								<a class="dropdown-item" href="#">French</a>
+								<a class="dropdown-item" href="en">en</a>
+								<a class="dropdown-item" href="fr">fr</a>
 						</div>
 				</div>
 			   
