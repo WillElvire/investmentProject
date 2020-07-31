@@ -47,6 +47,11 @@ Route::group(['prefix'=>'invest'],function(){
 
     Route::get('/deconnection',function(){
 
+
+        if(session()->has('user_id')):
+            session()->forget('user_id');
+            return redirect('/invest/login');
+        endif;
         
     });
 
