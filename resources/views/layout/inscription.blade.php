@@ -24,6 +24,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('/asset/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('/asset/css/main.css')}}">
 <!--===============================================================================================-->
+
+
 </head>
 <body>
 	
@@ -35,6 +37,14 @@
 					<span class="login100-form-title">
 						Inscription    
 					</span>
+
+					@if(isset($message))
+
+						<div class="alert alert-danger">
+						
+								{{$message}}
+						</div>
+					@endif
 
 					<div  class="wrap-input100 validate-input m-b-16" data-validate="this field is required">
 						<input value="{{old('name')}}" required="required" class="input100" type="text" name="name" placeholder="Entrez votre nom">
@@ -97,7 +107,7 @@
 							Don’t have an account?
 						</span>
 
-						<a href="#" class="txt3">
+						<a href="/invest/login" class="txt3">
 							se connecter au back office
 						</a>
 					</div>
@@ -105,7 +115,7 @@
 			</div>
 		</div>
 	</div>
-	
+	@include('sweet::alert')
 	
 <!--===============================================================================================-->
 	<script src="/asset/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -124,5 +134,7 @@
 <!--===============================================================================================-->
 	<script src="/asset/js/main.js"></script>
 
+
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

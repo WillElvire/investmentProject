@@ -14,6 +14,62 @@ use \Torann\GeoIP\Facades\GeoIP;
 |
 */
 
+
+
+Route::group(['prefix'=>'invest'],function(){
+
+      Route::get('/home/{id}',function($id){
+
+          return View('user/partials/profil');
+      });
+
+      Route::get('/calculator',function(){
+
+        return View('user/partials/calculator');
+    });
+
+    Route::get('/investment/{id}',function($id){
+
+        return View('user/partials/investissement');
+    });
+
+    Route::get('/account/{id}',function($id){
+
+        return View('user/partials/account');
+    });
+
+    Route::get('/login',function(){
+
+        return View('user/partials/connection');
+    })->name('login.path');
+
+    Route::post('/login','authController@store');
+
+    Route::get('/deconnection',function(){
+
+        
+    });
+
+    Route::post('/investissement/{id}',function($id){
+
+        return View('user/partials/investissement');
+    });
+
+    Route::get('/history/{id}',function($id){
+
+        return View('user/partials/historique');
+    });
+
+
+    Route::delete('/history',function(){
+
+        return View('user/partials/historique');
+    });
+
+
+
+});
+
 Route::get('/', function () {
     
     //dd(geoip()->getLocation('154.0.26.70'));

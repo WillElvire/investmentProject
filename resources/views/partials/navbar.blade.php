@@ -56,7 +56,11 @@
 	        	<li class="nav-item"><a href="/tableaux" class="nav-link">{{ __('navbar.tables')}}</a></li>
 	        	<li class="nav-item"><a href="/faq" class="nav-link">faq</a></li>
 	          <li class="nav-item"><a href="/action/inscription" class="nav-link">{{ __('navbar.register')}}</a></li>
-	          <li class="nav-item"><a href="/action/authentification" class="nav-link">Back office</a></li>
+			  @if(\Session::has('user_id'))
+	             <li class="nav-item"><a href="/invest/home/{{\Session::get('user_id')}}" class="nav-link">Back office</a></li>
+			  @else
+			  	 <li class="nav-item"><a href="/invest/login/" class="nav-link">Back office</a></li>
+			  @endif
 	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
 			   <!--<div class="nav-item dropdown ">
 						<a class="nav-link  dropdown-toggle" style="color:black"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateCustomersTable extends Migration
 {
     /**
@@ -18,7 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('password');
             $table->string('identity');
             $table->string('token');

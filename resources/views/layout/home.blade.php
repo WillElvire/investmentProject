@@ -463,7 +463,7 @@
               @csrf
               <div class="form-group d-flex">
                 <input name="email" type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
+                <input type="submit" value="Subscribe" class="btn btn-primary ">
               </div>
             </form>
           </div>
@@ -561,7 +561,7 @@
 
     
   
-
+ @include('sweet::alert')
   <!-- loader -->
   
 

@@ -15,6 +15,7 @@
 </head>
 <body>
 
+    @include('sweet::alert')
     <div class="main">
 
         <!-- Sign up form -->

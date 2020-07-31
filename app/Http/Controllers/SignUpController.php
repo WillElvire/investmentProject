@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use UxWeb\SweetAlert\SweetAlert;
 
 use App\Mail\CustomerSignup;
 
@@ -32,14 +33,16 @@ class SignUpController extends Controller
 
 
         if ($request->password != $request->password_confirm) {
-        	return redirect()->back();
+          
+        	return view('/layout/inscription')->withMessage(" your password is'nt equal");
         }
 
 
         if ($request->id_parrain != null) {
                 $verify = DB::table('customers')->where('uniq_id',$request->id_parrain)->first();
                  if ($verify === null) {
-                   return redirect()->back();
+                 
+                   return view('layout/inscription')->withMessage(" referal id doesn't exist");
                  }
 
                  $identity = $request->file('identity')->store('public/CustomerIdentiy/image');
@@ -94,10 +97,10 @@ class SignUpController extends Controller
       if ($authorization === "confirmed" AND $client->confirmation === 0) {
             Customer::where('token', $token)->update(['confirmation' => 1]);
 
-        $request->session()->flash('success', "Bravo votre compte a été confirmer avec succes!");
+            alert()->success("Bravo votre compte a été confirmer avec succes!",'succès')->autoclose(10000);
             return redirect()->route('contact.path');
       } else {
-            $request->session()->flash('success', "Votre compte a dèja été confirmer");
+            alert()->info("Votre compte a dèja été confirmer")->autoclose(10000);
             return redirect()->route('contact.path');
       }
     }
