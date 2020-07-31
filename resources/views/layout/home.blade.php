@@ -9,11 +9,11 @@
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
 		          <div class="col-md-8 ftco-animate">
 		          	<div class="text w-100 text-center">
-		          		<h2>We Business Grow</h2>
-						<h1 class="mb-4">We Help You Businesses Innovate and Grow</h1>
+		          		<h2>{{ __('we business grow') }}</h2>
+						<h1 class="mb-4">{{ __('We Help You Businesses Innovate and Grow') }}</h1>
 						
 						<p>
-							<a href="#" class=" col-md- 6 btn btn-white">Connect with us</a>
+							<a href="#" class=" col-md- 6 btn btn-white">{{ __('Connect with us') }}</a>
 						
 						</p>
 						

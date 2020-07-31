@@ -14,21 +14,26 @@ use \Torann\GeoIP\Facades\GeoIP;
 |
 */
 
-Route::get('/{locale}', function ($locale) {
-    App::setlocale($locale);
-    session(['locale'=>$locale]);
+Route::get('/', function () {
+    
     //dd(geoip()->getLocation('154.0.26.70'));
     return view('layout/home');
-}); 
+});
 
-Route::post('/','inscriptionController@shop');
+
 
 Route::get('/tableaux',function(){
+    
      return View('layout/tableaux');
 });
 
-Route::get('/contact',function(){
+Route::get('/faq',function(){
+    
+     return View('layout/faq');
+});
 
+
+Route::get('/contact',function(){
 
     return View('layout/contact');
 
@@ -66,3 +71,51 @@ Route::group(['prefix'=>'action'],function(){
 });
 
 
+// les routes post pour le select du multilinguage
+
+Route::post('/',function(){
+    if (isset($_POST['lang'])) {
+        $locale = $_POST['lang'];
+
+        session(['locale'=>$locale]);
+        
+        
+        return back();
+    }
+});
+
+Route::post('/tableaux',function()
+{
+    if (isset($_POST['lang'])) {
+        $locale = $_POST['lang'];
+
+        session(['locale'=>$locale]);
+        
+        
+        return back();
+    }
+});
+
+Route::post('/faq',function()
+{
+    if (isset($_POST['lang'])) {
+        $locale = $_POST['lang'];
+
+        session(['locale'=>$locale]);
+        
+        
+        return back();
+    }
+});
+
+Route::post('/contact',function()
+{
+    if (isset($_POST['lang'])) {
+        $locale = $_POST['lang'];
+
+        session(['locale'=>$locale]);
+        
+        
+        return back();
+    }
+});
