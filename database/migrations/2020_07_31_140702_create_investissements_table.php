@@ -15,6 +15,12 @@ class CreateInvestissementsTable extends Migration
     {
         Schema::create('investissements', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->string('pack');
+            $table->string('montant');
+            $table->string('received');
+            $table->date('payday');
+            $table->string('duree');
             $table->timestamps();
         });
     }

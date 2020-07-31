@@ -116,10 +116,10 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+                                        {{$information->name ?? ''}} {{$information->lastname ?? ''}}
                                     </h5>
                                     <h6>
-                                        Web Developer and Designer
+                                        {{$information->email ?? ''}}
                                     </h6>
                                     <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -132,17 +132,15 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
                             <p>Personal information</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
+                            <a href="">Country : {{$ip->country ?? ''}}</a><br/>
+                            <a href="">City : {{$ip->city  ?? ''}}</a><br/>
+                            <a href="">ip : {{$ip->ip ?? ''}}</a>
                             
                         </div>
                     </div>
@@ -154,7 +152,7 @@
                                                 <label>User Id</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p>{{$information->uniq_id ?? ''}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -162,7 +160,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p>{{$information->name ?? ''}} {{$information->lastname ?? ''}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -170,7 +168,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p>{{$information->email ?? ''}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -178,17 +176,10 @@
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p>{{$information->phone ?? ''}}</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
+                                        
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         

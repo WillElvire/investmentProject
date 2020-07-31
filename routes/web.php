@@ -33,10 +33,7 @@ Route::group(['prefix'=>'invest'],function(){
         return View('user/partials/investissement');
     });
 
-    Route::get('/account/{id}',function($id){
-
-        return View('user/partials/account');
-    });
+    Route::get('/account/{id}','profilController@index');
 
     Route::get('/login',function(){
 
@@ -55,10 +52,7 @@ Route::group(['prefix'=>'invest'],function(){
         
     });
 
-    Route::post('/investissement/{id}',function($id){
-
-        return View('user/partials/investissement');
-    });
+    Route::post('/investment/{id}','investissementController@store');
 
     Route::get('/history/{id}',function($id){
 
