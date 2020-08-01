@@ -18,7 +18,21 @@ use \App\Models\customer;
 
 
 
+Route::get('/ref/{id}',function($id){
+
+
+    $information=Customer::whereUniq_id($id)->first();
+    return View('user/partials/referal')->withInfo($information);
+
+});
+
+
+
 Route::group(['prefix'=>'invest'],function(){
+
+
+
+    
 
 
 
@@ -27,30 +41,46 @@ Route::group(['prefix'=>'invest'],function(){
           return View('user/partials/parrainage');
      });
 
+
+
       Route::get('/home/{id}',function($id){
     
           $invest=investissement::whereUser_id($id)->get();
           return View('user/partials/profil')->withInvest($invest);
       });
 
+
+
+
       Route::get('/calculator',function(){
 
         return View('user/partials/calculator');
+
     });
 
     Route::get('/investment/{id}',function($id){
 
         return View('user/partials/investissement');
+
     });
 
+
+
     Route::get('/account/{id}','profilController@index');
+
+
 
     Route::get('/login',function(){
 
         return View('user/partials/connection');
+
     })->name('login.path');
 
+
+
     Route::post('/login','authController@store');
+
+
 
     Route::get('/deconnection',function(){
 
@@ -58,8 +88,12 @@ Route::group(['prefix'=>'invest'],function(){
         if(session()->has('user_id')):
             session()->forget('user_id');
             return redirect('/invest/login');
+        else:
+
+            return redirect('/invest/login');
+
         endif;
-        
+  
     });
 
     Route::post('/investment/{id}','investissementController@store');

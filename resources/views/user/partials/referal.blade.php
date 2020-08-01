@@ -30,20 +30,31 @@
       <a class="hiddenanchor" id="signin"></a>
 
       <div class="login_wrapper">
+
         <div class="animate form login_form">
           <section class="login_content">
             <form method="post" action="">
                @csrf
-              <h1>E-Trading 212</h1>
+              <h1>Referal</h1>
 
                 @if(isset($error))
                 <div class="alert alert-danger">
                   {{$error}}
                 </div>
                 @endif
+
+
+                <div class="alert alert-primary">Create your account to access to your back office</div>
+             
+             
+              <div>
+                <input type="text" class="form-control" name="email" placeholder="email" value="{{$info->name ?? ''}} {{$info->lastname ?? ''}}" required="" />
+              </div>
+              
               <div>
                 <input type="text" class="form-control" name="email" placeholder="email" required="" />
               </div>
+             
               <div>
                 <input type="password" class="form-control" name="password" placeholder="Password" required="" />
               </div>

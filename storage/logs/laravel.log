@@ -5050,3 +5050,46 @@ esbot\\carbon\\src\\Carbon\\Traits\\IntervalStep.php:20)
 #47 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\server.php(21): require_once('C:\\\\Users\\\\PC-WIL...')
 #48 {main}
 "} 
+[2020-08-01 14:32:04] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\outes\\web.php:27)
+[stacktrace]
+#0 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(417): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\Users\\\\PC-WIL...')
+#1 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(374): Illuminate\\Routing\\Router->loadRoutes('C:\\\\Users\\\\PC-WIL...')
+#2 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(134): Illuminate\\Routing\\Router->group(Array, 'C:\\\\Users\\\\PC-WIL...')
+#3 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\app\\Providers\\RouteServiceProvider.php(63): Illuminate\\Routing\\RouteRegistrar->group('C:\\\\Users\\\\PC-WIL...')
+#4 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\app\\Providers\\RouteServiceProvider.php(47): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#5 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#6 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#7 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#8 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#9 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#10 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#11 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#12 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#13 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\app\\Providers\\RouteServiceProvider.php(35): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#14 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#15 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#16 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(867): Illuminate\\Container\\Container->call(Array)
+#21 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(850): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#22 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 24)
+#23 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): array_walk(Array, Object(Closure))
+#24 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#25 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(230): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#26 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#27 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(135): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#28 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(109): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\server.php(21): require_once('C:\\\\Users\\\\PC-WIL...')
+#31 {main}
+"} 
+[2020-08-01 14:33:48] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\psr\\log\\Psr\\Log\\LoggerInterface.php:20)
+[stacktrace]
+#0 {main}
+"} 
+[2020-08-01 14:35:05] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Cache\\CacheManager.php:16)
+[stacktrace]
+#0 {main}
+"} 
