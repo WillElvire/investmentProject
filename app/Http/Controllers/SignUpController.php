@@ -28,6 +28,7 @@ class SignUpController extends Controller
             'phone'=>'required|min:8|max:8|integer',
             'password'=>'required|string|min:8',
             'password_confirm'=>'required|min:8|string',
+            'country'=>'required|string',
             'identity'=>'sometimes|image|max:5000']
           );
 
@@ -38,33 +39,7 @@ class SignUpController extends Controller
         }
 
 
-        if ($request->id_parrain != null) {
-                $verify = DB::table('customers')->where('uniq_id',$request->id_parrain)->first();
-                 if ($verify === null) {
-                 
-                   return view('layout/inscription')->withMessage(" referal id doesn't exist");
-                 }
-
-                 $identity = $request->file('identity')->store('public/CustomerIdentiy/image');
-                 $customer = Customer::create(
-
-              [
-               'name'=>$request->name,
-               'lastname'=>$request->lastname,
-               'email'=>$request->email,
-               'phone'=>$request->phone,
-               'password'=>Hash::make($request->password),
-               'token'=>Customer::getToken(60),
-               'identity'=>$identity,
-               'uniq_id'=>uniqid(),
-               'id_parrain'=>$request->id_parrain,
-               'id_parrain'=>$request->id_parrain
-        ]);
-         Mail::to($request->email)->send(new CustomerSignup($customer));
-         return redirect()->back();
-        }
-
-
+  
     	$identity = $request->file('identity')->store('public/CustomerIdentiy/image');
     	$customer = Customer::create(
 
@@ -75,16 +50,13 @@ class SignUpController extends Controller
                'phone'=>$request->phone,
                'password'=>Hash::make($request->password),
                'token'=>Customer::getToken(60),
+               'country'=>$request->country,
                'identity'=>$identity,
                'uniq_id'=>uniqid(),
-               'id_parrain'=>$request->id_parrain
     		]);
 
          Mail::to($request->email)->send(new CustomerSignup($customer));
-
-
-
-    	return redirect()->back();
+    	   return redirect()->back();
     }
 
 

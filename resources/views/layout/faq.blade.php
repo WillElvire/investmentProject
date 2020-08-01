@@ -1,3 +1,4 @@
+
 @extends('welcome')
 
 @section('container')
@@ -22,7 +23,8 @@
    <h1>QUELLES SONT NOS DIFFERENTES OFFRES ?</h1>
    
 
-   <p>Nous vous offrons trois packs d’investissements qui sont les suivants : 
+   <p>Nous vous offrons trois packs d’investissements 
+    qui sont les suivants : 
 <br>
 <b>-SILVER SUCCESS PACK </b> 
 <br>

@@ -17,6 +17,7 @@ use \App\Models\customer;
 */
 
 
+Route::match ([ 'get' , 'post' ], '/ botman' , 'BotManController@handle' );
 
 Route::group(['prefix'=>'invest'],function(){
 

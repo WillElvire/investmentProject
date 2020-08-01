@@ -23,12 +23,13 @@ class CreateCustomersTable extends Migration
             $table->string('password');
             $table->string('identity');
             $table->string('token');
+            $table->string('country');
             $table->integer('confirmation')->default(0);
-            $table->string('uniq_id')->nullable()->default('');
+            $table->string('uniq_id');
             $table->string('id_parrain')->nullable()->default('');
             $table->timestamps();
         });
-    }
+    
 
     /**
      * Reverse the migrations.

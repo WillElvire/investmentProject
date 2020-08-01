@@ -16,4 +16,12 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+       <script>
+    var botmanWidget = {
+        aboutText: 'ssdsd',
+        introMessage: "✋ Hello comment pouvons nous vous aidez?"
+    };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   </head>
