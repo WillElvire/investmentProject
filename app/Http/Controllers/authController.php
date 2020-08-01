@@ -24,15 +24,15 @@ class authController extends Controller
 
                     if($password_check==true):
 
-                                if($verify->confirmation==1):
+                                //if($verify->confirmation==1):
 
                                     Session::put('user_id',$verify->uniq_id);
                                     return redirect('/invest/home/'.$verify->uniq_id);
-                                else:
+                                //else:
 
-                                    return View('user/partials/connection')->withError("you must confirm your account before get access to your profil");
+                                    //return View('user/partials/connection')->withError("you must confirm your account before get access to your profil");
                                 
-                                endif;
+                                //endif;
                     else:
 
                                 return View('user/partials/connection')->withError("password doesn't match");

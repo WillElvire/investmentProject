@@ -19,6 +19,7 @@
     <!-- iCheck -->
     <link href="/user/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- bootstrap-progressbar -->
     <link href="/user/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -31,6 +32,7 @@
   </head>
 
   <body class="nav-md">
+  @include('sweet::alert')
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -42,15 +44,7 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-               
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                
-              </div>
-            </div>
+            
             <!-- /menu profile quick info -->
 
             <br />
@@ -88,7 +82,7 @@
                   <li><a href="/invest/parrainage/{{\Session('user_id')}}"><i class="fa fa-sitemap"></i> Parainage </a>
                    
                   </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                  
                 </ul>
               </div>
 
@@ -97,15 +91,7 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
+              
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="/invest/deconnection">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
@@ -131,7 +117,7 @@
 
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            E-trading212  
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -178,7 +164,13 @@
     <script src="/user/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Custom Theme Scripts -->
+    <script src="/js/bourse.js"></script>
     <script src="/user/build/js/custom.min.js"></script>
+    <script  src="/js/rsi.js"></script>
+
+
+
+   
 	
   </body>
 </html>

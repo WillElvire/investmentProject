@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use \Torann\GeoIP\Facades\GeoIP;
+use \App\Models\investissement;
+use \App\Models\customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,17 @@ use \Torann\GeoIP\Facades\GeoIP;
 
 Route::group(['prefix'=>'invest'],function(){
 
-      Route::get('/home/{id}',function($id){
 
-          return View('user/partials/profil');
+
+     Route::get('/parrainage/{id}',function($id){
+
+          return View('user/partials/parrainage');
+     });
+
+      Route::get('/home/{id}',function($id){
+    
+          $invest=investissement::whereUser_id($id)->get();
+          return View('user/partials/profil')->withInvest($invest);
       });
 
       Route::get('/calculator',function(){
@@ -54,15 +64,12 @@ Route::group(['prefix'=>'invest'],function(){
 
     Route::post('/investment/{id}','investissementController@store');
 
-    Route::get('/history/{id}',function($id){
-
-        return View('user/partials/historique');
-    });
+    Route::get('/history/{id}','profilController@getInvest');
 
 
-    Route::delete('/history',function(){
-
-        return View('user/partials/historique');
+    Route::delete('/history/{id}',function($id){
+        $delete=investissement::whereId($id)->delete();
+        return redirect()->back();
     });
 
 

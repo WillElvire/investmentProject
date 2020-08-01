@@ -127,7 +127,7 @@
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Referal</a>
                                 </li>
                             </ul>
                         </div>
@@ -185,10 +185,12 @@
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>other information</label>
+                                                <label>Referal link</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>nothing to show</p>
+                                                <p>
+                                                    <input type="text" class="form-control" value="{{ config('app.url') }}/ref/{{$information->uniq_id}}">
+                                                </p>
                                             </div>
                                         </div>
                                        

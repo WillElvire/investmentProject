@@ -17,9 +17,10 @@ class CreateInvestissementsTable extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('pack');
+            $table->string('person')->nullable()->default('1');
             $table->string('montant');
             $table->string('received');
-            $table->date('payday');
+            $table->datetime('payday');
             $table->string('duree');
             $table->timestamps();
         });
