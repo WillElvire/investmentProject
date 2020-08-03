@@ -225,7 +225,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 
-    Route::get('/',function(){
+    Route::get('/home',function(){
 
          return View('admin/partials/home');
     });

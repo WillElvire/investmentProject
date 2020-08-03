@@ -7131,3 +7131,16 @@ esbot\\carbon\\src\\Carbon\\CarbonPeriod.php:155)
 [stacktrace]
 #0 {main}
 "} 
+[2020-08-03 15:53:34] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php:16)
+[stacktrace]
+#0 {main}
+"} 
+[2020-08-03 15:56:27] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Modifiers.php:20)
+[stacktrace]
+#0 {main}
+"} 
+[2020-08-03 15:58:41] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\symfony\\console\\Application.php:62)
+[stacktrace]
+#0 {main}
+"} 
