@@ -2,7 +2,7 @@
 
 return [
 
-	'home'=>'acceuil',
+	'home'=>'accueil',
 	'tables'=>'tableaux',
 	'register'=>'inscription',
 ];

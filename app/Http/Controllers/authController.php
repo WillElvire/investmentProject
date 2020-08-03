@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use \App\models\Customer;
+use App\Models\Customer;
 use \Session;
 
 class authController extends Controller

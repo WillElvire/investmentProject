@@ -54,21 +54,21 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="/invest/home/{{\Session('user_id')}}"><i class="fa fa-home"></i> Home </a>
+                  <li><a href="{{config('app.url')}}/invest/home/{{\Session('user_id')}}"><i class="fa fa-home"></i> Home </a>
                     
                   </li>
 
                   
-                  <li><a href="/invest/calculator/"><i class="fa fa-edit"></i> calculatrice </a>
+                  <li><a href="{{config('app.url')}}/invest/calculator/"><i class="fa fa-edit"></i> calculatrice </a>
                    
                   </li>
-                  <li><a href="/invest/account/{{\Session('user_id')}}"><i class="fa fa-desktop"></i> Profil</a>
+                  <li><a href="{{config('app.url')}}/invest/account/{{\Session('user_id')}}"><i class="fa fa-desktop"></i> Profil</a>
                     
                   </li>
-                  <li><a href="/invest/history/{{\Session('user_id')}}"><i class="fa fa-table"></i> historique</a>
+                  <li><a href="{{config('app.url')}}/invest/history/{{\Session('user_id')}}"><i class="fa fa-table"></i> historique</a>
                     
                   </li>
-                  <li><a href="/invest/investment/{{\Session('user_id')}}"><i class="fa fa-bar-chart-o"></i> investissement </a>
+                  <li><a href="{{config('app.url')}}/invest/investment/{{\Session('user_id')}}"><i class="fa fa-bar-chart-o"></i> investissement </a>
                     
                   </li>
                   
@@ -79,7 +79,7 @@
                 <ul class="nav side-menu">
                
                   
-                  <li><a href="/invest/parrainage/{{\Session('user_id')}}"><i class="fa fa-sitemap"></i> Parainage </a>
+                  <li><a href="{{config('app.url')}}/invest/parrainage/{{\Session('user_id')}}"><i class="fa fa-sitemap"></i> Parainage </a>
                    
                   </li>                  
                   
@@ -92,10 +92,16 @@
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
               
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/invest/deconnection">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{config('app.url')}}/invest/deconnection">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
+
+              <a data-toggle="tooltip" data-placement="top" title="home" href="{{config('app.url')}}">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              </a>
             </div>
+
+           
             <!-- /menu footer buttons -->
           </div>
         </div>

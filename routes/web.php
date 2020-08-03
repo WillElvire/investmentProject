@@ -17,15 +17,18 @@ use \App\Models\customer;
 */
 
 
+Route::match ([ 'get' , 'post' ], '/ botman' , 'BotManController@handle' );
 
 Route::get('/ref/{id}',function($id){
 
 
     $information=Customer::whereUniq_id($id)->first();
-    return View('user/partials/referal')->withInfo($information);
+    $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    return View('user/partials/referal')->withInfo($information)->withIp($ip);
 
 });
 
+Route::post('/ref/{id}','SignUpController@storeReferal');
 
 
 Route::group(['prefix'=>'invest'],function(){

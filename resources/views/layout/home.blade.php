@@ -9,11 +9,11 @@
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
 		          <div class="col-md-8 ftco-animate">
 		          	<div class="text w-100 text-center">
-		          		<h2>{{ __('we business grow') }}</h2>
-						<h1 class="mb-4">{{ __('We Help You Businesses Innovate and Grow') }}</h1>
+		          		<h2>we business grow</h2>
+						<h1 class="mb-4">We Help You Businesses Innovate and Grow</h1>
 						
 						<p>
-							<a href="#" class=" col-md- 6 btn btn-white">{{ __('Connect with us') }}</a>
+							<a href="#" class=" col-md- 6 btn btn-white">Connect with us</a>
 						
 						</p>
 						
@@ -304,29 +304,33 @@
     			</div>
     			<div class="col-lg-6 pl-lg-5">
     				<div class="heading-section mb-5 mt-5 mt-lg-0">
-    					<span class="subheading">FAQs</span>
-	            <h2 class="mb-3">Frequently Asks Questions</h2>
-	            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    					<span class="subheading">A propos de nous</span>
+	            <h2 class="mb-3">Ce que vous devez savoir</h2>
+	           
     				</div>
     				<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
 						  <div class="card">
 						    <div class="card-header p-0" id="headingOne">
 						      <h2 class="mb-0">
-						        <button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-						        	<p class="mb-0">How to fixed a problem?</p>
+						        <button href="#collapseOne" type="button" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+						        	<p class="mb-0">Qui sommes nous ?</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
 						    </div>
 						    <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
 						      <div class="card-body py-3 px-0">
-						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
-						      	</ol>
+						      	<b>Nous sommes une compilation  de brokers  relativement debonnaire en mode usage ,fonctionnalité, et prime  ; Qui permettent 
+								à l'apprehension professionnelle des actifs proposés. 
+								Par ailleur en terme d'outil indispensable de trading , nous avons un dispositif essentiel octroyant le nécéssaire d'information d'investissement 
+								en vue de la sureté de votre capital . Notre facteur reste l'un des plus approuvé en satisfaction .Cependant vue la compréhension indiferente des investisseurs dans l'application du courtage boursier
+								nous offrons une autre manière plus fiable d'en bénéficier sans toutefois etre en défaillance de fond de départ.En somme tout comme le broker FXCM , la 
+								plateforme de trading 212 propose tout ce qu'il a de plus standard.Actuellement il est possible de constater une réelle expansion du domaine du trading,
+								mais aussi de ses risques.Alors que beaucoup se lancent dans cette activité financière afin de devnir autonome financièrement
+								parlant , il faut impérativement rester prudent et veiller à choisir un courtier de qualité comme le notre 
+								
+								   </b>
+
 						      </div>
 						    </div>
 						  </div>
@@ -334,21 +338,19 @@
 						  <div class="card">
 						    <div class="card-header p-0" id="headingTwo" role="tab">
 						      <h2 class="mb-0">
-						        <button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
-						        	<p class="mb-0">How to manage your business loans?</p>
+						        <button href="#collapseTwo" type="button" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+						        	<p class="mb-0">Notre siège?</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
 						    </div>
 						    <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
-						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
-						      	</ol>
+						      	
+								  <b>E-trading 212 est enregistrée en Angleterre  (numéro d'enregistrements 8695225), avec une adresse enregistrée au 43-45 Dorset Street , London , W1U 7NA,trading 
+								  212 UK Ltd.</b>
+
+
 						      </div>
 						    </div>
 						  </div>
@@ -356,21 +358,21 @@
 						  <div class="card">
 						    <div class="card-header p-0" id="headingThree" role="tab">
 						      <h2 class="mb-0">
-						        <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-						        	<p class="mb-0">How to grow your investments funds?</p>
+						        <button href="#collapseThree" type="button" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+						        	<p class="mb-0">Comment accroitre son investissement?</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
 						    </div>
 						    <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
-						      	<ol>
-						      		<li>Far far away, behind the word mountains</li>
-						      		<li>Consonantia, there live the blind texts</li>
-						      		<li>When she reached the first hills of the Italic Mountains</li>
-						      		<li>Bookmarksgrove, the headline of Alphabet Village</li>
-						      		<li>Separated they live in Bookmarksgrove right</li>
-						      	</ol>
+						      
+									<b>La bourse permet de rapprocher les agents qui ont des bésoins de financement (l'offre) et les agens 
+									qui ont des capacités de financement ( la demande ).de ce pat , e-trading 212 vous propose aujourd'hui 
+									une alternative de placement traditionnel qui permet au particulier d'investir en ligne 
+									en toute sécurité avec un capital accessible à tous .En effet votre investissement nous permetra d'avoir 
+									un capital considerable afin de peser lourd sur les marchés boursier . </b>
+
 						      </div>
 						    </div>
 						  </div>
@@ -378,15 +380,28 @@
 						  <div class="card">
 						    <div class="card-header p-0" id="headingFour" role="tab">
 						      <h2 class="mb-0">
-						        <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-						        	<p class="mb-0">What are those requirements for businesses?</p>
+						        <button href="#collapseFour" type="button" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+						        	<p class="mb-0">Quelle sont les choses requises pour les investissements ?</p>
 						          <i class="fa" aria-hidden="true"></i>
 						        </button>
 						      </h2>
 						    </div>
 						    <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="card-body py-3 px-0">
-						      	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+						       
+							     <ol>
+								 <b><li>
+										Avoir un capital selon les critères de l'entreprise
+									</li>
+									<li>
+										Se positionner sur un plan d'investissement qui nous siert 
+									</li>
+									<li>
+									     Investir  
+									</li> </b>
+								 </ol>
+
+
 						      </div>
 						    </div>
 						  </div>

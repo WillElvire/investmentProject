@@ -28,6 +28,7 @@ class SignUpController extends Controller
             'phone'=>'required|min:8|max:8|integer',
             'password'=>'required|string|min:8',
             'password_confirm'=>'required|min:8|string',
+            'country'=>'required|string',
             'identity'=>'sometimes|image|max:5000']
           );
 
@@ -38,53 +39,96 @@ class SignUpController extends Controller
         }
 
 
-        if ($request->id_parrain != null) {
-                $verify = DB::table('customers')->where('uniq_id',$request->id_parrain)->first();
-                 if ($verify === null) {
-                 
-                   return view('layout/inscription')->withMessage(" referal id doesn't exist");
-                 }
+  
+      $identity = $request->file('identity')->store('public/CustomerIdentity/image');
+      $verify=Customer::whereEmail($request->email)->first();
 
-                 $identity = $request->file('identity')->store('public/CustomerIdentiy/image');
-                 $customer = Customer::create(
+      if($verify==null):
+
+            $customer = Customer::create(
 
               [
-               'name'=>$request->name,
-               'lastname'=>$request->lastname,
-               'email'=>$request->email,
-               'phone'=>$request->phone,
-               'password'=>Hash::make($request->password),
-               'token'=>Customer::getToken(60),
-               'identity'=>$identity,
-               'uniq_id'=>uniqid(),
-               'id_parrain'=>$request->id_parrain,
-               'id_parrain'=>$request->id_parrain
-        ]);
-         Mail::to($request->email)->send(new CustomerSignup($customer));
-         return redirect()->back();
-        }
+                    'name'=>$request->name,
+                    'lastname'=>$request->lastname,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'password'=>Hash::make($request->password),
+                    'token'=>Customer::getToken(60),
+                    'country'=>$request->country,
+                    'identity'=>$identity,
+                    'uniq_id'=>uniqid(),
+              ]);
+
+              Mail::to($request->email)->send(new CustomerSignup($customer));
+              return redirect()->back();
+         
+        else:
 
 
-    	$identity = $request->file('identity')->store('public/CustomerIdentiy/image');
-    	$customer = Customer::create(
+          return view('/layout/inscription')->withMessage("email already used");
 
-    		[
-               'name'=>$request->name,
-               'lastname'=>$request->lastname,
-               'email'=>$request->email,
-               'phone'=>$request->phone,
-               'password'=>Hash::make($request->password),
-               'token'=>Customer::getToken(60),
-               'identity'=>$identity,
-               'uniq_id'=>uniqid(),
-               'id_parrain'=>$request->id_parrain
-    		]);
 
-         Mail::to($request->email)->send(new CustomerSignup($customer));
+        endif;
+    }
 
 
 
-    	return redirect()->back();
+
+
+
+    public function storeReferal(Request $request, $id){
+
+
+      $verify = validator::make($request->all(),
+
+           [
+            'name'=>'required|string|max:225',
+            'lastname'=>'required|string|max:225',
+            'email'=>'required',
+            'phone'=>'required|min:8|max:8|integer',
+            'password'=>'required|string|min:8',
+            
+            'country'=>'required|string',
+            'identity'=>'sometimes|image|max:5000']
+          );
+
+        
+          
+          $identity = $request->file('identity')->store('public/CustomerIdentity/image');
+          $verify=Customer::whereEmail($request->email)->first();
+          $check=Custormer::whereId_parrain($id)->first();
+
+          
+
+      if($verify==null and $check!=null):
+
+            $customer = Customer::create(
+
+              [
+                    'name'=>$request->name,
+                    'lastname'=>$request->lastname,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'password'=>Hash::make($request->password),
+                    'token'=>Customer::getToken(60),
+                    'id_parrain'=>$id,
+                    'country'=>$request->country,
+                    'identity'=>$identity,
+                    'uniq_id'=>uniqid(),
+              ]);
+
+              //Mail::to($request->email)->send(new CustomerSignup($customer));
+              return redirect()->back();
+         
+        else:
+
+
+          return view('/layout/inscription')->withMessage("email already used or referal doesn't exists");
+
+
+        endif;
+
+
     }
 
 
