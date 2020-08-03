@@ -33,32 +33,25 @@
 
         <div class="animate form login_form">
           <section class="login_content">
-            <form method="post" action="">
+            <form method="post" action="{{ route('store.customer.path') }}" enctype="multipart/form-data">
                @csrf
               <h1>Referal</h1>
 
-                @if(isset($message))
+                @if(isset($message)) 
                 <div class="alert alert-danger">
                   {{$message}}
                 </div>
                 @endif
-
-
                 <div class="alert alert-primary">Create your account to access to your back office</div>
-             
-             
               <div>
                  <select name="referal" class="form-control">
-                <option  value="{{$info->name ?? ''}} {{$info->lastname ?? ''}}" >{{$info->name ?? ''}} {{$info->lastname ?? ''}} </option>
+                <option  value="{{$info->uniq_id ?? '' }}" >{{$info->name ?? ''}} {{$info->lastname ?? ''}} </option>
                 </select>
               </div>
-
               <br>
-
               <div>
-               
-                <select name="country" class="input100 form-control" enctype="multipart/form-data">
-							<option value="{{$ip->country}}"  selected="selected">{{$ip->country}}</option>
+                <select name="country"  class="input100 form-control" enctype="multipart/form-data">
+							<option value=" "  selected="selected">Votre pays</option>
 							<option value="Afghanistan">Afghanistan </option>
 								<option value="Afrique_Centrale">Afrique_Centrale </option>
 								<option value="Afrique_du_sud">Afrique_du_Sud </option>
@@ -74,7 +67,6 @@
 								<option value="Australie">Australie </option>
 								<option value="Autriche">Autriche </option>
 								<option value="Azerbaidjan">Azerbaidjan </option>
-
 								<option value="Bahamas">Bahamas </option>
 								<option value="Bangladesh">Bangladesh </option>
 								<option value="Barbade">Barbade </option>
@@ -93,7 +85,6 @@
 								<option value="Bulgarie">Bulgarie </option>
 								<option value="Burkina_Faso">Burkina_Faso </option>
 								<option value="Burundi">Burundi </option>
-
 								<option value="Caiman">Caiman </option>
 								<option value="Cambodge">Cambodge </option>
 								<option value="Cameroun">Cameroun </option>
@@ -114,11 +105,9 @@
 								<option value="Cote_d_Ivoire">Côte_d_Ivoire </option>
 								<option value="Croatie">Croatie </option>
 								<option value="Cuba">Cuba </option>
-
 								<option value="Danemark">Danemark </option>
 								<option value="Djibouti">Djibouti </option>
 								<option value="Dominique">Dominique </option>
-
 								<option value="Egypte">Egypte </option>
 								<option value="Emirats_Arabes_Unis">Emirats_Arabes_Unis </option>
 								<option value="Equateur">Equateur </option>
@@ -317,49 +306,42 @@
               <br>
 
               <div>
-                <input type="text" class="form-control" name="name" placeholder="name" required=""  />
+                <input value="{{old('name')}}" type="text" class="form-control" name="name" placeholder="name" required="required"  />
               </div>
-
+                {!! $errors->first('name','<span class="help-block">:message</span>') !!}
               <div>
-                <input type="text" class="form-control" name="lastaname" placeholder="lastname" required=""   />
+                <input value="{{old('lastname')}}" type="text" class="form-control" name="lastname" placeholder="lastname" required="required"   />
               </div>
-              
+                {!! $errors->first('lastname','<span class="help-block">:message</span>') !!}
               <div>
-                <input type="text" class="form-control" name="email" placeholder="email" required="" />
-                
+                <input value="{{old('email')}}" type="email" class="form-control" name="email" placeholder="email" required="required" />
               </div>
-
-             
+                {!! $errors->first('email','<span class="help-block">:message</span>') !!}
               <div>
-                <input type="number" class="form-control" name="phone" placeholder="phone" required="" />
+                <input type="number" class="form-control" name="phone" placeholder="phone" required="required" />
               </div>
-
+              {!! $errors->first('phone','<span class="help-block">:message</span>') !!}
               <br>
              
               <div>
-                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
               </div>
+              {!! $errors->first('password','<span class="help-block">:message</span>') !!}
 
-            
-
+                <div>
+                <input type="password" class="form-control" name="password_confirm" placeholder="Confirm your password" required="required" />
+              </div>
+              {!! $errors->first('password_confirm','<span class="help-block">:message</span>') !!}
 
               <div>
+              	<label>Entrer une piece valide pour confirmer votre identité(carte d'identité, passport...)</label>
                   <input class="form-control" type="file" name="identity" > 
               </div>
-
+              {!! $errors->first('identity','<span class="help-block">:message</span>') !!}
               <br>
-
-              
-
-
               <div>
                 <button type="submit" class="btn btn-success btn-lg col-md-12 submit" >s'inscrire</button>
-                
               </div>
-
-
-              
-
               <div class="clearfix"></div>
 
               <div class="separator">
