@@ -29,6 +29,8 @@ class CreateCustomersTable extends Migration
             $table->string('id_parrain')->nullable()->default('');
             $table->timestamps();
         });
+
+    }
     
 
     /**

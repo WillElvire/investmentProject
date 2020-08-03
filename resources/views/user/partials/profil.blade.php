@@ -9,7 +9,7 @@
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-money"></i> Montant à recevoir</span>
-              <div class="count" style="font-size:42px" >{{$invest->sum('received')  ?? '0'}}</div>
+              <div class="count" style="font-size:35px" >{{$invest->sum('received')  ?? '0'}}</div>
               <input type="hidden" value="{{$invest->sum('received')  ?? '0'}}" id="received">
               
             </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-money"></i> Montant investit</span>
-              <div class="count" style="font-size:42px" >{{$invest->sum('montant') ?? '0'}} </div>
+              <div class="count" style="font-size:35px" >{{$invest->sum('montant') ?? '0'}} </div>
               <input type="hidden" value="{{$invest->sum('montant') ?? '0'}}" id="invest">
               
             </div>

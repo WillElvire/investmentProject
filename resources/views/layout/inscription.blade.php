@@ -23,6 +23,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('/asset/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('/asset/css/main.css')}}">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	   <script>
     var botmanWidget = {
         aboutText: 'ssdsd',
@@ -43,7 +44,10 @@
 				<form action="{{ route('store.customer.path') }}" enctype="multipart/form-data" method="POST" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					@csrf
 					<span class="login100-form-title">
-						Inscription    
+						Inscription    <br>
+
+						<a class="btn btn-success" href="{{config('app.url')}}">previous</a>
+
 					</span>
 
 					@if(isset($message))
@@ -396,6 +400,6 @@
 	<script src="/asset/js/main.js"></script>
 
 
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 </html>

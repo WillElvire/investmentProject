@@ -19,7 +19,23 @@ use \App\Models\customer;
 
 Route::match ([ 'get' , 'post' ], '/ botman' , 'BotManController@handle' );
 
+Route::get('/ref/{id}',function($id){
+
+
+    $information=Customer::whereUniq_id($id)->first();
+    $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    return View('user/partials/referal')->withInfo($information)->withIp($ip);
+
+});
+
+Route::post('/ref/{id}','SignUpController@storeReferal');
+
+
 Route::group(['prefix'=>'invest'],function(){
+
+
+
+    
 
 
 
@@ -28,30 +44,46 @@ Route::group(['prefix'=>'invest'],function(){
           return View('user/partials/parrainage');
      });
 
+
+
       Route::get('/home/{id}',function($id){
     
           $invest=investissement::whereUser_id($id)->get();
           return View('user/partials/profil')->withInvest($invest);
       });
 
+
+
+
       Route::get('/calculator',function(){
 
         return View('user/partials/calculator');
+
     });
 
     Route::get('/investment/{id}',function($id){
 
         return View('user/partials/investissement');
+
     });
 
+
+
     Route::get('/account/{id}','profilController@index');
+
+
 
     Route::get('/login',function(){
 
         return View('user/partials/connection');
+
     })->name('login.path');
 
+
+
     Route::post('/login','authController@store');
+
+
 
     Route::get('/deconnection',function(){
 
@@ -59,8 +91,12 @@ Route::group(['prefix'=>'invest'],function(){
         if(session()->has('user_id')):
             session()->forget('user_id');
             return redirect('/invest/login');
+        else:
+
+            return redirect('/invest/login');
+
         endif;
-        
+  
     });
 
     Route::post('/investment/{id}','investissementController@store');
@@ -181,4 +217,19 @@ Route::post('/contact',function()
         
         return back();
     }
+});
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+
+
+
+    Route::get('/home',function(){
+
+         return View('admin/partials/home');
+    });
+
+
+
 });
