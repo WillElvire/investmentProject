@@ -7127,3 +7127,7 @@ esbot\\carbon\\src\\Carbon\\CarbonPeriod.php:155)
 #43 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\server.php(21): require_once('C:\\\\Users\\\\PC-WIL...')
 #44 {main}
 "} 
+[2020-08-03 14:09:49] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\symfony\\translation\\MessageCatalogue.php:20)
+[stacktrace]
+#0 {main}
+"} 

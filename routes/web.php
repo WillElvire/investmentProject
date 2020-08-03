@@ -218,3 +218,18 @@ Route::post('/contact',function()
         return back();
     }
 });
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+
+
+
+    Route::get('/',function(){
+
+         return View('admin/partials/home');
+    });
+
+
+
+});
