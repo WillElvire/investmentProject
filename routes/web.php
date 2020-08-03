@@ -230,6 +230,31 @@ Route::group(['prefix'=>'admin'],function(){
          return View('admin/partials/home');
     });
 
+    Route::get('/recherche',function(){
+
+        return View('admin/partials/recherche');
+
+    });
+
+    Route::post('/recherche','adminController@search');
+
+    Route::get('/inscrits','adminController@inscrits'
+
+        
+
+    );
+
+    Route::get('/payement','adminController@paiement');
+
+    Route::get('/profil',function(){
+
+         return View('admin/partials/profil');
+
+    });
+
+    Route::delete('/inscrits','adminController@delete');
+
+
 
 
 });
