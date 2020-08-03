@@ -21,14 +21,10 @@ class investissementController extends Controller
               $verify=customer::whereUniq_id($id)->first();
 
               if($verify==null):
-
                 return redirect('/invest/login');
-
               else:
 
                 $payday=$this->getPayDay($req->pack,$req->duree);
-
-               
                if(investissement::create([
                    "user_id"=>$id,
                    "pack"=>$req->pack,

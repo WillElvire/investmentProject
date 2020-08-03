@@ -9,7 +9,7 @@ use \Session;
 
 class authController extends Controller
 {
-    //
+    
 
         public function store(Request $req){
 
@@ -17,7 +17,6 @@ class authController extends Controller
             if($verify==null):
 
                  return View('user/partials/connection')->withError("this email doesn't exists");
-
             else:
 
                 $password_check=password_verify($req->password,$verify->password);
