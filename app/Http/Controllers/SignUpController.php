@@ -19,20 +19,23 @@ class SignUpController extends Controller
     {  
 
 
-        $verify = validator::make($request->all(),
+
+         $this->validate($request,
 
            [
             'name'=>'required|string|max:225',
             'lastname'=>'required|string|max:225',
-            'email'=>'required',
-            'phone'=>'required|min:8|max:8|integer',
+            'email'=>'required|email',
+            'phone'=>'required|min:8|max:8',
             'password'=>'required|string|min:8',
             'password_confirm'=>'required|min:8|string',
             'country'=>'required|string',
             'identity'=>'sometimes|image|max:5000']
           );
 
+    
 
+          
         if ($request->password != $request->password_confirm) {
           
         	return view('/layout/inscription')->withMessage(" your password is'nt equal");
@@ -42,8 +45,7 @@ class SignUpController extends Controller
   
       $identity = $request->file('identity')->store('public/CustomerIdentity/image');
       $verify=Customer::whereEmail($request->email)->first();
-
-      if($verify==null):
+      if($verify==null || isset($request->referal)):
 
             $customer = Customer::create(
 
@@ -57,6 +59,7 @@ class SignUpController extends Controller
                     'country'=>$request->country,
                     'identity'=>$identity,
                     'uniq_id'=>uniqid(),
+                    'id_parrain'=>$request->referal
               ]);
 
               Mail::to($request->email)->send(new CustomerSignup($customer));

@@ -58,4 +58,11 @@ class adminController extends Controller
 
          return View('admin/partials/home');
     }
+
+
+    public function authentification(Request $request){
+
+
+        dd($request->all());
+    }
 }

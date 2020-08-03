@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \Torann\GeoIP\Facades\GeoIP;
 use \App\Models\investissement;
-use \App\Models\customer;
+use \App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +23,8 @@ Route::get('/ref/{id}',function($id){
 
 
     $information=Customer::whereUniq_id($id)->first();
-    $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
-    return View('user/partials/referal')->withInfo($information)->withIp($ip);
+   // $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    return View('user/partials/referal')->withInfo($information);
 
 });
 
@@ -243,6 +243,13 @@ Route::group(['prefix'=>'admin'],function(){
         
 
     );
+
+    Route::post('/connection','adminController@authentification');
+
+    Route::get('/connection',function(){
+         
+         return View('admin/partials/connection');
+    });
 
     Route::get('/payement','adminController@paiement');
 
