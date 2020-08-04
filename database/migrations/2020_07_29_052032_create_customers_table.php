@@ -27,6 +27,7 @@ class CreateCustomersTable extends Migration
             $table->integer('confirmation')->default(0);
             $table->string('uniq_id');
             $table->string('id_parrain')->nullable()->default('');
+            $table->integer('number_of_parrainage')->default(0);
             $table->timestamps();
         });
 
