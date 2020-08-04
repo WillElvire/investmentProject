@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use \App\Models\Customer;
 use \App\Models\Investissement;
-use \App\Administrateur;
+use \App\Administrateurs;
 use \Carbon\Carbon;
+use \Session;
 class adminController extends Controller
 {
     //
@@ -15,16 +16,33 @@ class adminController extends Controller
     public function inscrits(){
 
 
-        $info=Customer::paginate(10);
+        $info=Customer::orderBy('id','desc')->paginate(10);
         
 
          return View("admin/partials/inscrit")->withInfo($info);
 
     }
 
-    public function search(){
+    public function search(Request $req){
+        $search=$req->input('search');
+        $user = Customer::where('uniq_id','LIKE','%'.$search.'%')
 
-          return View('admin/partials/recherche');
+           ->orWhere('name','LIKE','%'.$search.'%')
+
+           ->orWhere('email','LIKE','%'.$search.'%')
+
+           ->orWhere('phone','LIKE','%'.$search.'%')
+
+           ->orWhere('lastname','LIKE','%'.$search.'%')
+
+           ->orWhere('country','LIKE','%'.$search.'%')
+
+           ->paginate('10');
+
+           
+
+           return View('admin/partials/recherche')->withUser($user)->withSearch($search);
+         
 
     }
 
@@ -32,7 +50,7 @@ class adminController extends Controller
 
 
           
-         
+          
           $paiement=Investissement::wherePayday(Date('y-m-d'))->leftJoin( 'customers','customers.uniq_id', '=', 'investissements.user_id')->paginate('10');
 
      
@@ -44,7 +62,10 @@ class adminController extends Controller
 
     public function profil($id){
 
-         return View('admin/partials/profil');
+         $information=Customer::whereUniq_id($id)->first();
+         $parrainage=Customer::whereId_parrain($id)->get();
+         $invest=Investissement::whereUser_id($id)->paginate(5);
+         return View('admin/partials/profil')->withInfo($information)->withInvest($invest)->withParrainage($parrainage);
     }
 
 
@@ -60,9 +81,48 @@ class adminController extends Controller
     }
 
 
+
+
+    
+
     public function authentification(Request $request){
 
 
-        dd($request->all());
+       
+
+        $email=$request->email;
+        $mdp=$request->password;
+
+        $verify=Administrateurs::whereEmailAndPassword($email,$mdp)->first();
+
+        if($verify!=null):
+
+
+               Session::put('verify',$verify->id);
+               return redirect("/admin/home");
+
+
+        else:
+
+
+
+           return View('admin/partials/connection')->withMessage("Verifier vos informations (email ou password )");
+
+
+
+        endif;
+
+        
+
+
+    }
+
+    public function delete($id){
+
+       
+        $verify=Customer::whereUniq_id($id)->delete();
+       
+        return redirect()->back();
+
     }
 }

@@ -32,10 +32,10 @@
                    
                                     <div class="card-body">
                                         <h4 class="header-title mt-0">S'authentifier</h4>
-                                        <p class="sub-header">
-                                            Admin area
-                                        </p>
-
+                                        
+                                        @if(isset($message))
+                                            <div class="alert alert-danger">{{$message}}</div>
+                                        @endif
                                         <form class="form-horizontal" method="post">
                                             @csrf
                                             <div class="row">

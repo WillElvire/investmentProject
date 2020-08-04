@@ -3,6 +3,50 @@
 
 <div class="content-page">
     <div class="content">
+    <br>
+    <br>
+    <div class="alert alert-primary">Vous avez {{$paiement->count() ?? ''}} paiement  Aujourd'hui  {{date('Y-m-d')}}</div>
+    
+    <div class="row">
+
+                            
+                            
+                            
+                            <div class="col-md-6 col-xl-6">
+
+                            
+                            <br>
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3">
+                                            <div class="media-body">
+                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">
+                                                    Somme à payer</span>
+                                                <h2 class="mb-0">{{$paiement->sum('received') ?? '0'}} XOF</h2>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-6">
+                            
+                            <br>
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3">
+                                            <div class="media-body">
+                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">
+                                                    Paiement</span>
+                                                <h2 class="mb-0">{{$paiement->count() ?? ''}} Personnes</h2>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
     <div class="row">
                             <div class="col-lg-12">
@@ -42,7 +86,12 @@
                                                     <td>{{$index->pack ?? ''}}</td>
                                                     <td>{{$index->montant ?? ''}}</td>
                                                     <td>{{$index->received ?? ''}}</td>
-                                                    <td>{{$index->duree ?? ''}}  </td>
+                                                    @if({{$index->pack=='heure'}})
+                                                       <td>{{$index->duree ?? ''}}  Heure(s) </td>
+                                                    @else
+                                                       
+                                                    <td>{{$index->duree ?? ''}}  Jours </td>
+                                                    @endif
                                                     <td>{{$index->person ?? '1'}} personne(s)</td>
                                                     
                                                     </tr>

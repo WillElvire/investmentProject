@@ -10,6 +10,19 @@
                             
                         </div>
 
+
+                        @if($paiement->count()!=0)
+
+                            <div class="alert alert-danger">
+                            
+                               Vous avez {{$paiement->count()}} paiement(s) Aujourd'hui <br>
+
+                                <a href="{{config('app.url')}}/admin/payement" stlye="color:white">Cliquer ici pour voir les personnes à payer</a>
+                              
+                            </div>
+
+                        @endif
+
                         <!-- content -->
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
@@ -55,15 +68,11 @@
                                     <div class="card-body p-0">
                                         <div class="media p-3">
                                             <div class="media-body">
-                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">New
-                                                    Customers</span>
-                                                <h2 class="mb-0">11</h2>
+                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">
+                                                    Total Customers</span>
+                                                <h2 class="mb-0">{{$total->count() ?? '0'}} Inscrit(s)</h2>
                                             </div>
-                                            <div class="align-self-center">
-                                                <div id="today-new-customer-chart" class="apex-charts"></div>
-                                                <span class="text-success font-weight-bold font-size-13"><i
-                                                        class='uil uil-arrow-up'></i> 25.16%</span>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -74,15 +83,11 @@
                                     <div class="card-body p-0">
                                         <div class="media p-3">
                                             <div class="media-body">
-                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">New
-                                                    Visitors</span>
-                                                <h2 class="mb-0">750</h2>
+                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">
+                                                    Paiement</span>
+                                                <h2 class="mb-0">{{$paiement->count() ?? ''}} Personnes</h2>
                                             </div>
-                                            <div class="align-self-center">
-                                                <div id="today-new-visitors-chart" class="apex-charts"></div>
-                                                <span class="text-danger font-weight-bold font-size-13"><i
-                                                        class='uil uil-arrow-down'></i> 5.05%</span>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -98,8 +103,8 @@
                                         <!-- stat 1 -->
                                         <div class="media px-3 py-4 border-bottom">
                                             <div class="media-body">
-                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">121,000</h4>
-                                                <span class="text-muted">Total Visitors</span>
+                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">{{$total->count() ?? '' }}</h4>
+                                                <span class="text-muted">Tous les inscrits</span>
                                             </div>
                                             <i data-feather="users" class="align-self-center icon-dual icon-lg"></i>
                                         </div>
@@ -107,44 +112,28 @@
                                         <!-- stat 2 -->
                                         <div class="media px-3 py-4 border-bottom">
                                             <div class="media-body">
-                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">21,000</h4>
-                                                <span class="text-muted">Total Product Views</span>
+                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">3500</h4>
+                                                <span class="text-muted">Nombre de vues</span>
                                             </div>
-                                            <i data-feather="image" class="align-self-center icon-dual icon-lg"></i>
+                                            <i data-feather="users" class="align-self-center icon-dual icon-lg"></i>
                                         </div>
 
                                         <!-- stat 3 -->
                                         <div class="media px-3 py-4">
                                             <div class="media-body">
-                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">$21.5</h4>
-                                                <span class="text-muted">Revenue Per Visitor</span>
+                                                <h4 class="mt-0 mb-1 font-size-22 font-weight-normal">{{$paiement->count() ?? '0'}}</h4>
+                                                <span class="text-muted">Paiement Jounalier </span>
                                             </div>
-                                            <i data-feather="shopping-bag" class="align-self-center icon-dual icon-lg"></i>
+                                            <i data-feather="money" class="align-self-center icon-dual icon-lg"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-xl-6">
+                            <div class="col-xl-9">
                                 <div class="card">
                                     <div class="card-body pb-0">
-                                        <ul class="nav card-nav float-right">
-                                            <li class="nav-item">
-                                                <a class="nav-link text-muted" href="#">Today</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link text-muted" href="#">7d</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#">15d</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link text-muted" href="#">1m</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link text-muted" href="#">1y</a>
-                                            </li>
-                                        </ul>
+                                        
                                         <h5 class="card-title mb-0 header-title">Revenue</h5>
 
                                         <div id="revenue-chart" class="apex-charts mt-3"  dir="ltr"></div>
@@ -152,14 +141,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-3">
-                                <div class="card">
-                                    <div class="card-body pb-0">
-                                        <h5 class="card-title header-title">Targets</h5>
-                                        <div id="targets-chart" class="apex-charts mt-3" dir="ltr"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <!-- row -->
                 

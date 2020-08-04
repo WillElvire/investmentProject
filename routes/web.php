@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use \Torann\GeoIP\Facades\GeoIP;
-use \App\Models\investissement;
+use \App\Models\Investissement;
 use \App\Models\Customer;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,7 @@ Route::get('/ref/{id}',function($id){
 
 
     $information=Customer::whereUniq_id($id)->first();
+   
    // $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
     return View('user/partials/referal')->withInfo($information);
 
@@ -227,7 +231,9 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::get('/home',function(){
 
-         return View('admin/partials/home');
+         $inscrit=Customer::all();
+         $paiement=Investissement::wherePayday(date('Y-m-d'))->get();
+         return View('admin/partials/home')->withPaiement($paiement)->withTotal($inscrit);
     });
 
     Route::get('/recherche',function(){
@@ -240,9 +246,9 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::get('/inscrits','adminController@inscrits'
 
-        
-
     );
+
+    Route::delete('/delete/{id}','adminController@delete');
 
     Route::post('/connection','adminController@authentification');
 
@@ -253,13 +259,30 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::get('/payement','adminController@paiement');
 
-    Route::get('/profil',function(){
-
-         return View('admin/partials/profil');
-
-    });
+    Route::get('/profil/{id}','adminController@profil');
 
     Route::delete('/inscrits','adminController@delete');
+
+
+    Route::get('/deconnection',function(){
+
+          if(\Session::has('verify')):
+
+             \Session::forget('verify');
+
+             return redirect('admin/connection');
+
+          else:
+
+             return redirect('admin/connection');
+             
+
+          endif;
+    });
+
+
+
+    
 
 
 

@@ -211,7 +211,7 @@
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="pages-profile.html" class="dropdown-item notify-item">
+                            <a href="{{config('app.url')}}/admin/" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -234,7 +234,7 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="index.html">
+                                <a href="{{config('app.url')}}/admin/home">
                                     <i data-feather="home"></i>
                                     <span class="badge badge-success float-right">1</span>
                                     <span> Dashboard </span>
@@ -244,7 +244,7 @@
                             <li>
                                 <a href="{{config('app.url')}}/admin/payement">
                                     <i data-feather="calendar"></i>
-                                    <span> Payement </span>
+                                    <span> Paiement </span>
                                 </a>
                             </li>
                             <li>
@@ -272,7 +272,7 @@
                             <li class="menu-title">Action</li>
 
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="{{config('app.url')}}/admin/deconnection">
                                     <i data-feather="home"></i>
                                     <span> Deconnection </span>
                                    
@@ -291,7 +291,7 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="{{config('app.url')}}">
                                     <i data-feather="home"></i>
                                     <span> Voir le site </span>
                                    
