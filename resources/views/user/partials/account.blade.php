@@ -180,7 +180,7 @@
                                         </div>
                                        <div class="row">
                                             <div class="col-md-6">
-                                                <label>NUmber of filleul</label>
+                                                <label>Number of filleul</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$information->number_of_parrainage ?? ''}}</p>
