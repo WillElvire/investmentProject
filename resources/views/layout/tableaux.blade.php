@@ -37,20 +37,41 @@
 							
 						
 								 <img src="/images/table/e-trading4.jpg" width="1000" height="1000" class="img-fluid">
+                                 <div class="text">
+								    <p>
+									     L'indication horaire se présente comme le plus avantageux sur la plateforme de trading et accorde une expressivité
+										 de retour sur fond investi. <br>
+										Comme déduction elle s'intentifie d'un taux allant de minimum 15 % à 30% maximum selon votre propre choix d'heure . <br>
 
+										Par example si vous investissez 300 000 XOF  pour un retour d'investissement de 6 heures vous recevez 350 000 XOF pour le meme montant en 12 heures 
+										375 000 XOF  et en  24 heures  400 000 XOF ; reciproque pour les autres montants .
+									</p>
+								 </div>
+								 <br>
+								 <br>
+
+								 <img src="/images/table/e-trading2.jpg" width="1000" height="1000" class="img-fluid">
+									<div class="text">
+									
+										<p>
+											Le tableau préambule consiste tout simplement à un rétour  sur investissement doublé en fonction du capital investi 
+											sur un temps de 7 jours . <br>
+											Comme ilustration si vous investissez 100.000 XOF pour 7 jours,  vous percevez le double qui est la somme de 200.000 XOF  qui inclu capital + interet <br>
+
+										</p>
+
+									</div>
 								 <br>
 								 <br>
 								 
+								 <div class="alert alert-danger"> Pas encore asseccible aux adhérants</div>
 								 <img src="/images/table/e-trading1.jpg" width="1000" height="1000" class="img-fluid">
 
 								 <br>
 								 <br>
 
-								 <img src="/images/table/e-trading2.jpg" width="1000" height="1000" class="img-fluid">
-
-								 <br>
-								 <br>
-
+								 
+								 <div class="alert alert-danger"> Pas encore asseccible aux adhérants</div>
 								 <img src="/images/table/e-trading3.jpg" width="1000" height="1000" class="img-fluid">
 					
 					

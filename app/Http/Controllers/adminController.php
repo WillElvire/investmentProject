@@ -51,7 +51,7 @@ class adminController extends Controller
 
           
           
-          $paiement=Investissement::wherePayday(Date('y-m-d'))->leftJoin( 'customers','customers.uniq_id', '=', 'investissements.user_id')->paginate('10');
+          $paiement=Investissement::wherePayday(Date('y-m-d'))->leftJoin( 'customers','customers.uniq_id', '=', 'investissements.user_id')->orderBy('id','desc')->paginate('10');
 
      
           //dd($paiement);
@@ -64,7 +64,7 @@ class adminController extends Controller
 
          $information=Customer::whereUniq_id($id)->first();
          $parrainage=Customer::whereId_parrain($id)->get();
-         $invest=Investissement::whereUser_id($id)->paginate(5);
+         $invest=Investissement::whereUser_id($id)->orderBy('id','desc')->paginate(5);
          return View('admin/partials/profil')->withInfo($information)->withInvest($invest)->withParrainage($parrainage);
     }
 

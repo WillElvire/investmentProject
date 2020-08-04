@@ -86,7 +86,7 @@
                                                     <td>{{$index->pack ?? ''}}</td>
                                                     <td>{{$index->montant ?? ''}}</td>
                                                     <td>{{$index->received ?? ''}}</td>
-                                                    @if({{$index->pack=='heure'}})
+                                                    @if($index->pack=='heure')
                                                        <td>{{$index->duree ?? ''}}  Heure(s) </td>
                                                     @else
                                                        
