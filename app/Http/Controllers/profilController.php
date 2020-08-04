@@ -16,7 +16,7 @@ class profilController extends Controller
 
        // $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
         $information=Customer::whereUniq_id($id)->first();
-       
+        
         return View('user/partials/account')->withInformation($information);
 
     }

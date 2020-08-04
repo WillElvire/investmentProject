@@ -25,7 +25,7 @@ class SignUpController extends Controller
            [
             'name'=>'required|string|max:225',
             'lastname'=>'required|string|max:225',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:customers',
             'phone'=>'required|min:8|max:8',
             'password'=>'required|string|min:8',
             'password_confirm'=>'required|min:8|string',
@@ -33,55 +33,60 @@ class SignUpController extends Controller
             'identity'=>'sometimes|image|max:5000']
           );
 
-    
 
           
         if ($request->password != $request->password_confirm) {
           
         	return view('/layout/inscription')->withMessage(" your password is'nt equal");
         }
-
-
-  
       $identity = $request->file('identity')->store('public/CustomerIdentity/image');
-      $verify=Customer::whereEmail($request->email)->first();
-      if($verify==null || isset($request->referal)):
 
+      if ($request->referal===null)
+          {
             $customer = Customer::create(
+                          [
+                            'name'=>$request->name,
+                            'lastname'=>$request->lastname,
+                            'email'=>$request->email,
+                            'phone'=>$request->phone,
+                            'password'=>Hash::make($request->password),
+                            'token'=>Customer::getToken(60),
+                            'country'=>$request->country,
+                            'identity'=>$identity,
+                            'uniq_id'=>uniqid(),
+                       ]);
+                        Mail::to($request->email)->send(new CustomerSignup($customer));
+                        return redirect()->back();
+              }
 
-              [
-                    'name'=>$request->name,
-                    'lastname'=>$request->lastname,
-                    'email'=>$request->email,
-                    'phone'=>$request->phone,
-                    'password'=>Hash::make($request->password),
-                    'token'=>Customer::getToken(60),
-                    'country'=>$request->country,
-                    'identity'=>$identity,
-                    'uniq_id'=>uniqid(),
-                    'id_parrain'=>$request->referal
-              ]);
-
-              Mail::to($request->email)->send(new CustomerSignup($customer));
-              return redirect()->back();
+           $number_parrain = DB::table('customers')->select('number_of_parrainage','confirmation')->where('uniq_id',$request->referal)->first();
+           $number = $number_parrain->number_of_parrainage += 1;
+           if ($number_parrain->number_of_parrainage < 8  && $number_parrain->confirmation === 1)
+             {
+                     $customer = Customer::create(
+                          [
+                            'name'=>$request->name,
+                            'lastname'=>$request->lastname,
+                            'email'=>$request->email,
+                            'phone'=>$request->phone,
+                            'password'=>Hash::make($request->password),
+                            'token'=>Customer::getToken(60),
+                            'country'=>$request->country,
+                            'identity'=>$identity,
+                            'uniq_id'=>uniqid(),
+                            'id_parrain'=>$request->referal
+                       ]);
+                        DB::table('customers')->where('uniq_id',$request->referal)->update(['number_of_parrainage'=> $number ]);
+                        Mail::to($request->email)->send(new CustomerSignup($customer));
+                        return redirect()->back();
+              }
          
-        else:
+           return view('/layout/inscription')->withMessage("Compte non confirmé ou nombre de parrainge atteind");
 
-
-          return view('/layout/inscription')->withMessage("email already used");
-
-
-        endif;
     }
 
 
-
-
-
-
     public function storeReferal(Request $request, $id){
-
-
       $verify = validator::make($request->all(),
 
            [
@@ -90,7 +95,6 @@ class SignUpController extends Controller
             'email'=>'required',
             'phone'=>'required|min:8|max:8|integer',
             'password'=>'required|string|min:8',
-            
             'country'=>'required|string',
             'identity'=>'sometimes|image|max:5000']
           );
@@ -100,8 +104,6 @@ class SignUpController extends Controller
           $identity = $request->file('identity')->store('public/CustomerIdentity/image');
           $verify=Customer::whereEmail($request->email)->first();
           $check=Custormer::whereId_parrain($id)->first();
-
-          
 
       if($verify==null and $check!=null):
 

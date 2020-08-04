@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use \Torann\GeoIP\Facades\GeoIP;
 use \App\Models\investissement;
 use \App\Models\Customer;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,10 +43,9 @@ Route::group(['prefix'=>'invest'],function(){
 
      Route::get('/parrainage/{id}',function($id){
 
-          return View('user/partials/parrainage');
+          $filleuls = DB::table('customers')->where('id_parrain',$id)->get();
+          return View('user/partials/parrainage',compact('filleuls'));
      });
-
-
 
       Route::get('/home/{id}',function($id){
     
