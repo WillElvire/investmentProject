@@ -109,8 +109,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                            
+                          <img height="80" width="80" src="{{ asset("storage/$information->identity") }}">
                         </div>
                     </div>
                     <div class="col-md-6">
