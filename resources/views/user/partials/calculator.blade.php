@@ -8,11 +8,11 @@
     <div class="container">
 
         <br>
-        <h5 class="row justify-content-center"> Currency Conventor(Calculatrice)</h5>
+        <h5 class="row justify-content-center"> Currency Converter(Calculatrice)</h5>
         <br>
          <div class="alert alert-success">
 
-             Convert devise in your currency ( convertissez une devise en votre monnaie)
+             Convert currencies into your own currency ( convertissez une devise en votre monnaie)
 
          </div>
          <div class="card">

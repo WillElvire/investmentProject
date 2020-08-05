@@ -120,13 +120,13 @@
                                     <h6>
                                         {{$information->email ?? ''}}
                                     </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                   
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Referal</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sponsorship</a>
                                 </li>
                             </ul>
                         </div>
@@ -136,7 +136,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>Personal information</p>
+                            <p>Personal information (Information personnelle)</p>
                             <a href="">Country : {{$ip->country ?? ''}}</a><br/>
                             <a href="">City : {{$ip->city  ?? ''}}</a><br/>
                             <a href="">ip : {{$ip->ip ?? ''}}</a>
@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label>Name (Nom & Prénom)</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$information->name ?? ''}} {{$information->lastname ?? ''}}</p>
@@ -172,7 +172,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone</label>
+                                                <label>Phone (Téléphone)</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$information->phone ?? ''}}</p>
@@ -180,10 +180,10 @@
                                         </div>
                                        <div class="row">
                                             <div class="col-md-6">
-                                                <label>Number of filleul</label>
+                                                <label>Number of godson (filleul)</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$information->number_of_parrainage ?? ''}}</p>
+                                                <p>{{$information->number_of_parrainage ?? '0'}}</p>
                                             </div>
                                         </div>
                                         
@@ -192,7 +192,7 @@
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Referal link</label>
+                                                <label>Sponsorship link (Lien de parrainage)</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>

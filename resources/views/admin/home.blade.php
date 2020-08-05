@@ -183,7 +183,7 @@
 
                                 <div class="dropdown-divider"></div>
 
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{config('app.url')}}/admin/deconnection" class="dropdown-item notify-item">
                                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                                     <span>Logout</span>
                                 </a>
@@ -220,7 +220,7 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{config('app.url')}}/admin/deconnection" class="dropdown-item notify-item">
                                 <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                                 <span>Logout</span>
                             </a>

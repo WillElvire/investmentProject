@@ -42,7 +42,7 @@
                           @foreach($history as $index)
                         <tr>
                           <td>{{$index->pack ?? ''}}</td>
-                          <td>{{$index->montant ?? '' }}</td>
+                          <td>{{$index->montant ?? '' }}XOF = {{floor($index->montant/600)}}$</td>
                           @if($index->pack=='heure')
                             <td>{{$index->duree ?? '' }}  Hours (Heures)</td>
                           @else
@@ -50,7 +50,7 @@
                             <td>{{$index->duree ?? '' }}  Days(Jours)</td>
 
                           @endif
-                          <td>{{ $index->received ?? '' }}</td>
+                          <td>{{ $index->received ?? '' }}XOF = {{floor($index->received/600)}} $ </td>
                           <td>{{$index->person ?? '1' }} persons</td>
                           <td>{{ $index->payday ??''}}</td>
                           

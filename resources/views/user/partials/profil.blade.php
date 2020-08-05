@@ -92,18 +92,12 @@
                 <div class="x_content">
                   <div class="dashboard-widget-content">
                     <ul class="quick-list">
-                      <li><i class="fa fa-calendar-o"></i><a href="#">Settings</a>
+                      
+                      <li><i class="fa fa-bar-chart"></i><a href="#">Balance</a> </li>
+                      <li><i class="fa fa-line-chart"></i><a href="#">Precision</a>
                       </li>
-                      <li><i class="fa fa-bars"></i><a href="#">Subscription</a>
-                      </li>
-                      <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
-                      <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
-                      </li>
-                      <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
-                      <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
-                      </li>
-                      <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
-                      </li>
+                      
+                      
                     </ul>
 
                     <div class="sidebar-widget">

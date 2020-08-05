@@ -38,7 +38,8 @@
 
                             <div class="card-body">
 
-                                <img src="{{$info->identity ?? ''}}" class="container-fluid">
+                                <img src="{{asset('storage/$info->identity')}}" class="container-fluid">
+                               
 
                             </div>
 
