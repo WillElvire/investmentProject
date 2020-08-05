@@ -15,33 +15,55 @@ class adminController extends Controller
 
     public function inscrits(){
 
+        $responce=$this->chechSession();
 
-        $info=Customer::orderBy('id','desc')->paginate(10);
+
+        if($responce==true):
         
+            $info=Customer::orderBy('id','desc')->paginate(10);
+            return View("admin/partials/inscrit")->withInfo($info);
 
-         return View("admin/partials/inscrit")->withInfo($info);
+        else:
+            return redirect('admin/connection');
 
+        endif;
+
+
+         
     }
 
     public function search(Request $req){
-        $search=$req->input('search');
-        $user = Customer::where('uniq_id','LIKE','%'.$search.'%')
 
-           ->orWhere('name','LIKE','%'.$search.'%')
+        $responce=$this->chechSession();
 
-           ->orWhere('email','LIKE','%'.$search.'%')
+        if($responce==true):
 
-           ->orWhere('phone','LIKE','%'.$search.'%')
+                $search=$req->input('search');
 
-           ->orWhere('lastname','LIKE','%'.$search.'%')
+                $user = Customer::where('uniq_id','LIKE','%'.$search.'%')
 
-           ->orWhere('country','LIKE','%'.$search.'%')
+                ->orWhere('name','LIKE','%'.$search.'%')
 
-           ->paginate('10');
+                ->orWhere('email','LIKE','%'.$search.'%')
 
-           
+                ->orWhere('phone','LIKE','%'.$search.'%')
 
-           return View('admin/partials/recherche')->withUser($user)->withSearch($search);
+                ->orWhere('lastname','LIKE','%'.$search.'%')
+
+                ->orWhere('country','LIKE','%'.$search.'%')
+
+                ->paginate('10');
+
+                
+
+                return View('admin/partials/recherche')->withUser($user)->withSearch($search);
+
+        else:
+
+             return redirect('admin/connection');
+
+
+        endif;
          
 
     }
@@ -49,7 +71,9 @@ class adminController extends Controller
     public function paiement(){
 
 
-          
+          $responce=$this->chechSession();
+
+          if($responce==true):
           
           $paiement=Investissement::wherePayday(Date('y-m-d'))->leftJoin( 'customers','customers.uniq_id', '=', 'investissements.user_id')->orderBy('id','desc')->paginate('10');
 
@@ -57,27 +81,60 @@ class adminController extends Controller
           //dd($paiement);
           return View('admin/partials/payement')->withPaiement($paiement);
 
+
+          else:
+
+
+              return redirect('admin/connection');
+
+
+          endif;
+
     }
 
 
     public function profil($id){
 
+         $responce=$this->chechSession();
+         if($responce==true):
          $information=Customer::whereUniq_id($id)->first();
          $parrainage=Customer::whereId_parrain($id)->get();
          $invest=Investissement::whereUser_id($id)->orderBy('id','desc')->paginate(5);
          return View('admin/partials/profil')->withInfo($information)->withInvest($invest)->withParrainage($parrainage);
+
+         else:
+
+            return redirect('admin/connection');
+
+         endif;
     }
 
 
     public function connnect(){
 
+        $responce=$this->chechSession();
+        if($responce==true):
+
          return View('admin/partials/connection');
+
+        else:
+
+            return redirect('admin/connection');
+
+        endif;
     }
 
 
     public function home(){
 
+        $responce=$this->chechSession();
+        if($responce==true):
          return View('admin/partials/home');
+        else:
+
+             return redirect('admin/connection');
+
+        endif;
     }
 
 
@@ -123,6 +180,26 @@ class adminController extends Controller
         $verify=Customer::whereUniq_id($id)->delete();
        
         return redirect()->back();
+
+    }
+
+
+    public function chechSession(){
+
+       $mysessionWay=null;
+
+      if(Session::has('verify')):
+
+         $mysessionWay=true;
+
+      else:
+
+         $mysessionWay=false;
+
+      endif;
+
+
+      return $mysessionWay;
 
     }
 }

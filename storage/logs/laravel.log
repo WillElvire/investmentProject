@@ -15945,3 +15945,7 @@ esbot\\carbon\\src\\Carbon\\Traits\\Creator.php:34)
 #47 C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\server.php(21): require_once('C:\\\\Users\\\\PC-WIL...')
 #48 {main}
 "} 
+[2020-08-04 21:34:23] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\PC-WILLY\\Desktop\\Project\\evrard2\\vendor\\laravel\\framework\\src\\Illuminate\\Contracts\\Cookie\\Factory.php:5)
+[stacktrace]
+#0 {main}
+"} 

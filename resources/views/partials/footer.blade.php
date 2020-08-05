@@ -4,8 +4,8 @@
 					<div class="col-md-9 py-5">
 						<div class="row">
 							<div class="col-md-4 mb-md-0 mb-4">
-								<h2 class="footer-heading">Apropos de nous</h2>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+								<h2 class="footer-heading">E-TRADING 212</h2>
+								
 								<ul class="ftco-footer-social p-0">
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>

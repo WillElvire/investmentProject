@@ -16,17 +16,7 @@
 										<a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
 									</p>
 								</div>
-								<div class="d-flex align-items-center">
-									<form method="post">
-										@csrf
-										<select name="lang" onChange="this.parentNode.submit()">
-											<option selected>{{$locale}}</option>
-											<option value="en">en</option>
-											<option value="fr">fr</option>
-										</select>
-									<form>
-										
-								</div>
+								
 								<div class="col-md-6 d-flex justify-content-md-end">
 									<div class="social-media">
 						    		<p class="mb-0 d-flex">
@@ -48,13 +38,13 @@
 	    	<a class="navbar-brand" href="/">	E-Trading 212</a>
 	    	
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
+	        <span class="fa fa-bars"></span> e-trading212
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
 	        	<li class="nav-item "><a href="/" class="nav-link">{{ __('navbar.home') }}</a></li>
 	        	<li class="nav-item"><a href="/tableaux" class="nav-link">{{ __('navbar.tables')}}</a></li>
-	        	<li class="nav-item"><a href="/faq" class="nav-link">faq</a></li>
+	        	
 	          <li class="nav-item"><a href="/action/inscription" class="nav-link">{{ __('navbar.register')}}</a></li>
 			  @if(\Session::has('user_id'))
 	             <li class="nav-item"><a href="/invest/home/{{\Session::get('user_id')}}" class="nav-link">Back office</a></li>
@@ -62,15 +52,23 @@
 			  	 <li class="nav-item"><a href="/invest/login/" class="nav-link">Back office</a></li>
 			  @endif
 	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-			   <!--<div class="nav-item dropdown ">
-						<a class="nav-link  dropdown-toggle" style="color:black"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    language
-						</a>
-						<div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="en">en</a>
-								<a class="dropdown-item" href="fr">fr</a>
-						</div>
-				</div>-->
+			  
+
+ 
+			   <div class=" nav-item d-flex align-items-center">
+									<form method="post">
+										@csrf
+										<select name="lang" class="  form-control " onChange="this.parentNode.submit()">
+											<option selected>{{$locale}}</option>
+											<option value="en">en</option>
+											<option value="fr">fr</option>
+										</select>
+									<form>
+										
+								</div>
+			     
+						
+			
 			   
 	        </ul>
 	      </div>

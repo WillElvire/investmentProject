@@ -26,12 +26,11 @@ Route::match ([ 'get' , 'post' ], '/ botman' , 'BotManController@handle' );
 
 Route::get('/ref/{id}',function($id){
 
-
-    $information=Customer::whereUniq_id($id)->first();
+    
+        $information=Customer::whereUniq_id($id)->first();
+    // $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+        return View('user/partials/referal')->withInfo($information);
    
-   // $ip=geoip()->getLocation($_SERVER['REMOTE_ADDR']);
-    return View('user/partials/referal')->withInfo($information);
-
 });
 
 Route::post('/ref/{id}','SignUpController@storeReferal');
@@ -47,14 +46,33 @@ Route::group(['prefix'=>'invest'],function(){
 
      Route::get('/parrainage/{id}',function($id){
 
-          $filleuls = DB::table('customers')->where('id_parrain',$id)->get();
-          return View('user/partials/parrainage',compact('filleuls'));
+         if(\Session::has('user_id')):
+
+            $filleuls = DB::table('customers')->where('id_parrain',$id)->get();
+            return View('user/partials/parrainage',compact('filleuls'));
+
+         else:
+
+
+            return redirect('/invest/login');
+
+
+         endif;
      });
 
       Route::get('/home/{id}',function($id){
     
-          $invest=investissement::whereUser_id($id)->get();
-          return View('user/partials/profil')->withInvest($invest);
+          if(\Session::has('user_id')):
+
+                $invest=investissement::whereUser_id($id)->get();
+                return View('user/partials/profil')->withInvest($invest);
+
+          else:
+
+            return redirect('/invest/login');
+
+
+          endif;
       });
 
 
@@ -62,13 +80,29 @@ Route::group(['prefix'=>'invest'],function(){
 
       Route::get('/calculator',function(){
 
-        return View('user/partials/calculator');
+        if(\Session::has('user_id')):
+
+            return View('user/partials/calculator');
+
+        else:
+
+            return redirect('/invest/login');
+
+        endif;
 
     });
 
     Route::get('/investment/{id}',function($id){
 
-        return View('user/partials/investissement');
+        if(\Session::has('user_id')):
+
+            return View('user/partials/investissement');
+
+        else:
+
+            return redirect('/invest/login');
+
+        endif;
 
     });
 
@@ -80,7 +114,10 @@ Route::group(['prefix'=>'invest'],function(){
 
     Route::get('/login',function(){
 
+       
         return View('user/partials/connection');
+
+       
 
     })->name('login.path');
 
@@ -110,8 +147,12 @@ Route::group(['prefix'=>'invest'],function(){
 
 
     Route::delete('/history/{id}',function($id){
+       
+
         $delete=investissement::whereId($id)->delete();
         return redirect()->back();
+
+     
     });
 
 
@@ -157,6 +198,9 @@ Route::group(['prefix'=>'action'],function(){
     Route::get('/validation',function(){
           return View('layout/validation');
     });
+
+
+  
 
     // Route::get('/inscrits',function(){
     //      return View('admin/partials/inscrits');
@@ -232,9 +276,16 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::get('/home',function(){
 
-         $inscrit=Customer::all();
-         $paiement=Investissement::wherePayday(date('Y-m-d'))->get();
-         return View('admin/partials/home')->withPaiement($paiement)->withTotal($inscrit);
+        if(\Session::has('verify')):
+
+                $inscrit=Customer::all();
+                $paiement=Investissement::wherePayday(date('Y-m-d'))->get();
+
+             return View('admin/partials/home')->withPaiement($paiement)->withTotal($inscrit);
+        else:
+
+            return redirect('admin/connection');
+        endif;
     });
 
     Route::get('/recherche',function(){
@@ -279,6 +330,11 @@ Route::group(['prefix'=>'admin'],function(){
              
 
           endif;
+    });
+
+
+    Route::get('/',function(){
+        return redirect('admin/connection');
     });
 
 
