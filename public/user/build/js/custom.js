@@ -544,7 +544,7 @@ function init_flot_chart() {
     if ($("#chart_plot_01").length) {
         console.log('Plot1');
 
-        $.plot($("#chart_plot_01"), [arr_data1, arr_data2], chart_plot_01_settings);
+        $.plot($("#chart_plot_01"), [arr_data1], chart_plot_01_settings);
     }
 
 
@@ -570,7 +570,7 @@ function init_flot_chart() {
 
 
         $.plot($("#chart_plot_03"), [{
-            label: "Registrations",
+            label: "Broker",
             data: chart_plot_03_data,
             lines: {
                 fillColor: "rgba(150, 202, 89, 0.12)"
